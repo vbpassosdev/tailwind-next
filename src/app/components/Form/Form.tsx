@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { User, Lock } from "lucide-react";
 import Settings from "./Settings";
+import Profile from "./Profile";
 
 const tabs = [
   { id: "details", label: "My Details" },
@@ -19,7 +20,7 @@ const tabs = [
 
 
 export function Form (){
-  const [activeTab, setActiveTab] = useState("account");
+  const [activeTab, setActiveTab] = useState("details");
 
   return (
     <div>
@@ -44,7 +45,7 @@ export function Form (){
       {/* Conteúdo da aba */}
       <div className="p-4 bg-white border border-t-0 rounded-b-md">
         {activeTab === "details" && <Settings/>}
-        {activeTab === "profile" && <p>Conteúdo da aba Profile</p>}
+        {activeTab === "profile" && <Profile/>}
       </div>
     </div>
   );
