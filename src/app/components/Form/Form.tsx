@@ -1,32 +1,27 @@
 "use client";
 
 import { useState } from "react";
-import { User, Lock } from "lucide-react";
-import Settings from "./Settings";
-import Profile from "./Profile";
+import Profile from "./Dashboard";
+import Procedimentos from "./Procedimentos";
+import Dashboard from "./Dashboard";
 
 const tabs = [
-  { id: "details", label: "My Details" },
-  { id: "profile", label: "Profile",  },
-  { id: "password", label: "Password"},
-  { id: "team", label: "Team"},
-  { id: "plan", label: "Plan"},
-  { id: "billing", label: "Billing"},
-  { id: "email", label: "Email"},
-  { id: "notifications", label: "Notifications"},
-  { id: "integrations", label: "Integrations"},
+  { id: "dashboard", label: "Dashboard" },
+  { id: "procedimentos", label: "Procedimentos" },  // id corrigido
+  { id: "valores", label: "Valores" },
+  { id: "equipe", label: "Equipe" },
+  { id: "notificacoes", label: "Notificações" },
   { id: "api", label: "API" },
 ];
 
-
-export function Form (){
-  const [activeTab, setActiveTab] = useState("details");
+export function Form() {
+  const [activeTab, setActiveTab] = useState(tabs[0].id); // inicializa com o primeiro tab
 
   return (
     <div>
       {/* Aba superior */}
       <div className="flex border-b border-gray-200">
-        {tabs.map(({ id, label}) => (
+        {tabs.map(({ id, label }) => (
           <button
             key={id}
             onClick={() => setActiveTab(id)}
@@ -36,7 +31,6 @@ export function Form (){
                 : "border-transparent text-gray-500 hover:text-violet-600"
             }`}
           >
-          
             {label}
           </button>
         ))}
@@ -44,11 +38,10 @@ export function Form (){
 
       {/* Conteúdo da aba */}
       <div className="p-4 bg-white border border-t-0 rounded-b-md">
-        {activeTab === "details" && <Settings/>}
-        {activeTab === "profile" && <Profile/>}
+        {activeTab === "procedimentos" && <Procedimentos />}
+        {activeTab === "dashboard" && <Dashboard />}
+        {/* Aqui você pode renderizar outros componentes para as outras abas */}
       </div>
     </div>
   );
-    
-
 }
