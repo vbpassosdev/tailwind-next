@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Profile from "./Dashboard";
 import Procedimentos from "./Procedimentos";
-import Dashboard from "./Dashboard";
+import Agendamentos from "./Agendamentos";
 
 const tabs = [
   { id: "dashboard", label: "Dashboard" },
@@ -11,7 +10,7 @@ const tabs = [
   { id: "valores", label: "Valores" },
   { id: "equipe", label: "Equipe" },
   { id: "notificacoes", label: "Notificações" },
-  { id: "api", label: "API" },
+
 ];
 
 export function Form() {
@@ -39,7 +38,7 @@ export function Form() {
       {/* Conteúdo da aba */}
       <div className="p-4 bg-white border border-t-0 rounded-b-md">
         {activeTab === "procedimentos" && <Procedimentos />}
-        {activeTab === "dashboard" && <Dashboard />}
+        {activeTab === "dashboard" && <Agendamentos />}
         {/* Aqui você pode renderizar outros componentes para as outras abas */}
       </div>
     </div>

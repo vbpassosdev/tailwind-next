@@ -37,7 +37,7 @@ export default function Procedimentos() {
     
         <form
           id="procedimentos"
-          className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200"
+          className="mt-6 flex w-full flex-col gap-5 "
         >
 
          <div className="grid grid-cols-form gap-3">
