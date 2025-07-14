@@ -4,7 +4,7 @@ import { SettingsTabs } from '@/components/SettingsTabs'
 import * as Input from '@/components/Input'
 import { Mail } from 'lucide-react'
 
-import { useState } from 'react'
+import { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useState } from 'react'
 
 export default function Procedimentos() {
       const [dataInput, setDataInput] = useState("")
@@ -18,7 +18,7 @@ export default function Procedimentos() {
     }
 
     function removerData(index: number) {
-      const novasDatas = datas.filter((_, i) => i !== index)
+      const novasDatas = datas.filter((_: any, i: number) => i !== index)
       setDatas(novasDatas)
     }
 
@@ -201,7 +201,7 @@ export default function Procedimentos() {
               </div>
 
               <ul className="space-y-1">
-                {datas.map((item, index) => (
+                {datas.map((item: { concluida: boolean | undefined; data: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; }, index: Key | null | undefined) => (
                   <li key={index} className="flex items-center gap-2">
                     <input
                       type="checkbox"

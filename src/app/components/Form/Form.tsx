@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Procedimentos from "./Procedimentos";
 import Agendamentos from "./Agendamentos";
+import ListaProcedimentos from "./ListaProcedimentos";
 
 const tabs = [
   { id: "dashboard", label: "Dashboard" },
@@ -39,7 +40,8 @@ export function Form() {
       <div className="p-4 bg-white border border-t-0 rounded-b-md">
         {activeTab === "procedimentos" && <Procedimentos />}
         {activeTab === "dashboard" && <Agendamentos />}
-        {/* Aqui você pode renderizar outros componentes para as outras abas */}
+         {activeTab === "valores" && <ListaProcedimentos />}
+       
       </div>
     </div>
   );
