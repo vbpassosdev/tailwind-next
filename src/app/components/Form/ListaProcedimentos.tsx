@@ -2,6 +2,13 @@
 
 import React, { useState } from 'react'
 
+interface Procedimento {
+  id: number
+  nome: string
+  cliente: string
+  data: string
+  valor?: string // opcional
+}
 
 
 export default function ListaProcedimentos() {
