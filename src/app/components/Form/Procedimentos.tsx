@@ -206,8 +206,8 @@ export default function Procedimentos() {
               </div>
 
               <ul className="space-y-1">
-                {datas.map((item: { concluida: boolean | undefined; data: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | PromiseLikeOfReactNode | null | undefined; }, index: Key | null | undefined) => (
-                  <li key={index} className="flex items-center gap-2">
+                {datas.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
                     <input
                       type="checkbox"
                       checked={item.concluida}
