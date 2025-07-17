@@ -8,7 +8,7 @@ import ListaProcedimentos from "./ListaProcedimentos";
 const tabs = [
   { id: "dashboard", label: "Dashboard" },
   { id: "procedimentos", label: "Procedimentos" },  // id corrigido
-  { id: "valores", label: "Valores" },
+  { id: "historico", label: "Historico" },
   { id: "equipe", label: "Equipe" },
   { id: "notificacoes", label: "Notificações" },
 
@@ -40,7 +40,7 @@ export function Form() {
       <div className="p-4 bg-white border border-t-0 rounded-b-md">
         {activeTab === "procedimentos" && <Procedimentos />}
         {activeTab === "dashboard" && <Agendamentos />}
-         {activeTab === "valores" && <ListaProcedimentos />}
+         {activeTab === "historico" && <ListaProcedimentos />}
        
       </div>
     </div>

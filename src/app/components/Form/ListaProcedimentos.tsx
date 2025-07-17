@@ -14,8 +14,17 @@ export default function ListaProcedimentos() {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <h1 className="text-3xl font-bold text-center mb-6">
-        Procedimentos Realizados
+        Realizados
       </h1>
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Pesquisar procedimentos..."
+          className="w-full p-2 border border-gray-300 rounded"
+        />
+
+      </div>
+      
 
       <ul className="bg-white rounded shadow divide-y divide-gray-200">
         {procedimentos.map(procedimento => (
@@ -23,12 +32,10 @@ export default function ListaProcedimentos() {
             <div>
               <p className="font-semibold">{procedimento.nome}</p>
               <p className="text-sm text-gray-600">
-                Cliente: {procedimento.cliente} — Data: {procedimento.data}
+                Cliente: {procedimento.cliente} — Data: {procedimento.data} - Valor: {procedimento.valor || 'R$ 0,00'}
               </p>
             </div>
-            <button className="text-red-500 text-xs hover:underline">
-              Remover
-            </button>
+          
           </li>
         ))}
       </ul>
