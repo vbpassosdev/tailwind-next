@@ -6,9 +6,14 @@ import { Mail } from 'lucide-react'
 
 import { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useState } from 'react'
 
+interface DataItem {
+  data: string;
+  concluida: boolean;
+}
+
 export default function Procedimentos() {
       const [dataInput, setDataInput] = useState("")
-    const [datas, setDatas] = useState<DataItem[0]>([ ])
+    const [datas, setDatas] = useState<DataItem[]>([ ])
 
     function adicionarData() {
       if (dataInput.trim() !== "") {

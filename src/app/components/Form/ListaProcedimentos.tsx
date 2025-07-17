@@ -39,7 +39,9 @@ export default function ListaProcedimentos() {
             <div>
               <p className="font-semibold">{procedimento.nome}</p>
               <p className="text-sm text-gray-600">
-                Cliente: {procedimento.cliente} — Data: {procedimento.data} - Valor: {procedimento.valor || 'R$ 0,00'}
+                Cliente: {procedimento.cliente} — 
+                Data: {procedimento.data} - 
+                Valor: {procedimento.valor || 'R$ 0,00'}
               </p>
             </div>
           
